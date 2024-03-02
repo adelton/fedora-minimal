@@ -1,6 +1,6 @@
 Name:		fedora-minimal
-Version:	0.35
-Release:	2%{?dist}
+Version:	0.36.1
+Release:	1%{?dist}
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -209,7 +209,7 @@ Conflicts:	glade-libs
 #Conflicts:	libxklavier - neede by my favourite lightdm
 #Conflicts:	keybinder3 - needed by terminator
 Conflicts:	zenity
-Conflicts:	accountsservice-libs
+#Conflicts:	accountsservice-libs - needed by xfce4-whiskermenu-plugin
 %description	conflicts-gnome
 Conflicts with Gnome packages that are not really needed.
 
@@ -491,6 +491,9 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
+* Sat Mar 02 2024 Jan Pazdziora <jpazdziora@redhat.com> - 0.36.1-1
+- accountsservice-libs is needed by xfce4-whiskermenu-plugin.
+
 * Sun Dec 19 2021 Šimon Lukašík <slukasik@redhat.com> - 0.35-2
 - rebuilt
 
