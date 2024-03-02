@@ -28,6 +28,11 @@ jobs:
       run: |
         rpmbuild -ba ./fedora-minimal.spec
 
+    - name: clear path for fedora-minimal-conflicts-auth
+      run: |
+        rpm -e --nodeps sudo
+        dnf remove -y authselect-libs
+
     - name: install
       run: |
-        sudo dnf install -y --skip-broken $HOME/rpmbuild/RPMS/noarch/fedora-minimal*
+        dnf install -y $HOME/rpmbuild/RPMS/noarch/fedora-minimal*
