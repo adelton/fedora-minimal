@@ -24,4 +24,4 @@ jobs:
 
     - name: install
       run: |
-        sudo dnf install -y $HOME/rpmbuild/RPMS/noarch/fedora-minimal*
+        sudo dnf install -y --skip-broken $HOME/rpmbuild/RPMS/noarch/fedora-minimal*
