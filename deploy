@@ -3,5 +3,9 @@ set -e -o pipefail
 set -x
 rm -rf ~/rpmbuild/RPMS/noarch/fedora-minimal-*
 rpmbuild -ba fedora-minimal.spec
-sudo dnf install ~/rpmbuild/RPMS/noarch/fedora-minimal*
+if rpm -qa 'fedora-minimal*' | grep . > /dev/null ; then
+	sudo dnf upgrade ~/rpmbuild/RPMS/noarch/fedora-minimal*
+else
+	sudo dnf install ~/rpmbuild/RPMS/noarch/fedora-minimal*
+fi
 
