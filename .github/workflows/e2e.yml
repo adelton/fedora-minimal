@@ -9,8 +9,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        container:
+          - registry.fedoraproject.org/fedora:rawhide
+          - registry.fedoraproject.org/fedora:latest
     container:
-      image: fedora:latest
+      image: ${{ matrix.container }}
     steps:
 
     - name: Install rpm-build
