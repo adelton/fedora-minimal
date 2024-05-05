@@ -156,7 +156,6 @@ Conflicts with various clould related tools.
 %package	conflicts-cockpit
 Summary:	Keeps cockpit off
 Conflicts:	cockpit
-Conflicts:	storaged
 %description	conflicts-cockpit
 Conflicts with cockpit packages. Cockpit is another useful tool
 that I don't really need.
