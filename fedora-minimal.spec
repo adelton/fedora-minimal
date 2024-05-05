@@ -380,7 +380,6 @@ Conflicts:	stunnel
 Conflicts:	systemd-python
 Conflicts:	systemd-python3
 Conflicts:	tigervnc-license
-Conflicts:	samba-common-libs
 Conflicts:	rsyslog
 Conflicts:	libestr libfastjson liblogging-stdlog
 Conflicts:	opensc
