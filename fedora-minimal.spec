@@ -91,7 +91,6 @@ Conflicts:	python3-blivet
 Conflicts:	python-cryptsetup
 Conflicts:	python-pyblock
 Conflicts:	python3-pwquality
-Conflicts:	augeas-libs
 Conflicts:	pyparted
 Conflicts:	device-mapper-multipath
 Conflicts:	kpartx
@@ -100,17 +99,6 @@ Conflicts:	lldpad
 Conflicts:	fcoe-utils
 Conflicts:	anaconda-user-help
 Conflicts:	anaconda-widgets
-Conflicts:	libblockdev
-Conflicts:	libblockdev-kbd bcache-tools
-Conflicts:	libblockdev-swap
-Conflicts:	libblockdev-mdraid
-Conflicts:	libblockdev-dm dmraid dmraid-events sgpio
-Conflicts:	libblockdev-lvm
-Conflicts:	libblockdev-loop
-Conflicts:	libblockdev-crypto volume_key-libs
-Conflicts:	libblockdev-utils
-Conflicts:	libudisks2
-Conflicts:	libbytesize
 Conflicts:	langtable
 %description	conflicts-anaconda
 Conflicts with Anaconda installer and its dependencies.
