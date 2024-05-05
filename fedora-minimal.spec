@@ -358,7 +358,7 @@ Summary:	Conflicts with support of dated hardware
 Conflicts:	iwl100-firmware iwl105-firmware iwl135-firmware
 Conflicts:	iwl1000-firmware
 Conflicts:	iwl2000-firmware iwl2030-firmware
-Conflicts:	iwl3160-firmware iwl3945-firmware
+Conflicts:	iwl3945-firmware
 Conflicts:	iwl4965-firmware
 Conflicts:	iwl5000-firmware iwl5150-firmware
 Conflicts:	iwl6000-firmware iwl6000g2a-firmware iwl6000g2b-firmware iwl6050-firmware
