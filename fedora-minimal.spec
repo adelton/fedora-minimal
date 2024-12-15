@@ -1,6 +1,6 @@
 Name:		fedora-minimal
-Version:	0.36.1
-Release:	1%{?dist}
+Version:	0.41.1
+Release:	%autorelease
 Summary:	Keeping my work notebook clean
 
 Group:		System Environment/Base
@@ -477,85 +477,4 @@ modprobe -r btusb
 %files		disable-services
 
 %changelog
-* Sat Mar 02 2024 Jan Pazdziora <jpazdziora@redhat.com> - 0.36.1-1
-- accountsservice-libs is needed by xfce4-whiskermenu-plugin.
-
-* Sun Dec 19 2021 Šimon Lukašík <slukasik@redhat.com> - 0.35-2
-- rebuilt
-
-* Sun Dec 19 2021 Šimon Lukašík <slukasik@redhat.com> - 0.32-7
-- rebuilt for f35
-
-* Tue Jun 16 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-6
-- rebuilt
-
-* Sun May 24 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-5
-- rebuilt
-
-* Fri May 22 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-4
-- rebuilt
-
-* Tue May 19 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-3
-- rebuilt
-
-* Tue May 19 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-2
-- rebuilt
-
-* Mon May 11 2020 Šimon Lukašík <slukasik@redhat.com> - 0.32-1
-- rebuilt for f32
-
-* Sun Dec 30 2018 Šimon Lukašík <slukasik@redhat.com> - 0.29-1
-- rebuilt for f29
-
-* Sat Sep 22 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-3
-- get a rid of authselect
-
-* Fri Jul 13 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-2
-- get a rid of virtualbox-guest-additions
-
-* Mon Jul 02 2018 Šimon Lukašík <slukasik@redhat.com> - 0.6-1
-- support f28
-
-* Mon Mar 05 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-11
-- rebuilt
-
-* Thu Jan 25 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-10
-- remove timedatex used only by anaconda
-- grace with ntfs, kids have external disks with ntfs nowdays
-
-* Tue Jan 16 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-9
-- introduce -conflicts-opencl
-
-* Wed Jan 10 2018 Šimon Lukašík <slukasik@redhat.com> - 0.5-8
-- rebuilt
-
-* Thu Dec 21 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-7
-- rebuilt
-
-* Wed Dec 20 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-7
-- rebuilt
-
-* Tue Dec 19 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-5
-- rebuilt
-
-* Mon Dec 18 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-4
-- rebuilt
-
-* Thu Nov 30 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-3
-- rebuilt -- fix coredumpctl (disable)
-
-* Sat Nov 25 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-2
-- rebuilt
-
-* Wed Nov 22 2017 Šimon Lukašík <slukasik@redhat.com> - 0.5-1
-- amended for my today needs on F27
-
-* Mon Oct 05 2015 Šimon Lukašík <slukasik@redhat.com> - 0.4-1
-- new upstream release
-
-* Fri Sep 11 2015 Šimon Lukašík <slukasik@redhat.com> - 0.3-1
-- new upstream release
-
-* Sat Feb 07 2015 slukasik - 0.2-1
-- new upstream release
-
+%autochangelog
