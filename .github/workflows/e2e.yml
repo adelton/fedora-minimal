@@ -35,4 +35,4 @@ jobs:
 
     - name: install
       run: |
-        dnf install -y $HOME/rpmbuild/RPMS/noarch/fedora-minimal*
+        dnf install --setopt=tsflags=noscripts -y $HOME/rpmbuild/RPMS/noarch/fedora-minimal*

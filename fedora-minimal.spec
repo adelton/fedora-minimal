@@ -1,5 +1,5 @@
 Name:		fedora-minimal
-Version:	0.41.1
+Version:	0.43.1
 Release:	%autorelease
 Summary:	Keeping my work notebook clean
 
