@@ -1,43 +1,50 @@
 # Fedora Minimal Project
-[![RPM Build](https://github.com/Element104/fedora-minimal/actions/workflows/rpm_build.yaml/badge.svg)](https://github.com/Element104/fedora-minimal/actions/workflows/rpm_build.yaml)
-[![RPM Lint](https://github.com/Element104/fedora-minimal/actions/workflows/rpmlint.yml/badge.svg)](https://github.com/Element104/fedora-minimal/actions/workflows/rpmlint.yml)
-[![RPM Install](https://github.com/Element104/fedora-minimal/actions/workflows/e2e.yml/badge.svg)](https://github.com/Element104/fedora-minimal/actions/workflows/e2e.yml)
 
-`fedora-minimal-\*.rpm` packages conflict with various unnecessary stuff.
-By installing `fedora-minimal-\*` package, you can achieve cleaner workstation installation.
+[![RPM lint](https://github.com/adelton/fedora-minimal/actions/workflows/rpmlint.yml/badge.svg)](https://github.com/adelton/fedora-minimal/actions/workflows/rpmlint.yml)
+[![RPM install test](https://github.com/adelton/fedora-minimal/actions/workflows/e2e.yml/badge.svg)](https://github.com/adelton/fedora-minimal/actions/workflows/e2e.yml)
+[![RPM build in copr repo](https://copr.fedorainfracloud.org/coprs/adelton/fedora-minimal/package/fedora-minimal/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/adelton/fedora-minimal/package/fedora-minimal/)
 
-Builds are at https://copr.fedoraproject.org/coprs/isimluk/fedora-minimal
+A set of `fedora-minimal-conflicts-*` packages that conflict with various
+areas that might not be desired on a given machine. By installing these
+conflicting subpackages, you minimize the chance that a huge list of
+dependencies will get installed during `dnf upgrade` for example via weak
+dependencies, making the system consume more disk space, less manageable,
+and ultimately less secure.
 
-## User Manual
+## Enable repository
 
-### Enable repository
+Packages are automatically built in the
+https://copr.fedorainfracloud.org/coprs/adelton/fedora-minimal/ repository.
+Enable access to them with
 
 ```
-dnf copr enable -y isimluk/fedora-minimal
+dnf copr enable -y adelton/fedora-minimal
 ```
 
-### Review available options
+## Review available options
 
+Check output of
 ```
-dnf search fedora-minimal-conflicts- 2> /dev/null | perl -ne 's/\.noarch\s*// and print'
+dnf search fedora-minimal-conflicts-
 ```
+to see what is available.
 
-### Install some parts of Fedora Minimal (removing some unneeded packages)
-Based on the output above
-```
-dnf install --allowerasing \
-    fedora-minimal-conflicts-vmguest \
-    fedora-minimal-conflicts-cloud-iaas \
-    fedora-minimal-conflicts-client-tools \
-    fedora-minimal-conflicts-languages \
-    fedora-minimal-conflicts-old-hw-support \
-    fedora-minimal-conflicts-ostree \
-    fedora-minimal-conflicts-abrt \
-    fedora-minimal-conflicts-libreport \
-    fedora-minimal-conflicts-btrfs
-```
+## Iterative process of minimizing the setup
 
-### Install all of the fedora-minimal (hard-core option)
+Try to enable all of them
 ```
-dnf install --allowerasing fedora-minimal
+sudo dnf install --skip-broken 'fedora-minimal-conflicts-*'
 ```
+At the
+```
+Is this ok [y/N]:
+```
+prompt decide if you want to install at least the packages without
+conflicts, giving you protection in those areas.
+
+You will likely have some packages reported with conflicts because you
+installation has some useful parts that would be prevented by complete
+set. But maybe it will force you to think if you really use or need
+all those packages on your setup. Clean up what you don't need and try
+to add more `fedora-minimal-conflicts-*` packages.
+
