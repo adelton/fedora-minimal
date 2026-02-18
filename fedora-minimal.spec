@@ -162,8 +162,7 @@ that I don't really need.
 
 %package	conflicts-docker
 summary:	keeps docker off
-# this one pretty much does it
-conflicts:	docker-io
+conflicts:	moby-engine
 %description	conflicts-docker
 Conflicts with Docker and libcontainer.
 
