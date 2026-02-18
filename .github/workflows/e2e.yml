@@ -18,15 +18,21 @@ jobs:
       image: ${{ matrix.container }}
     steps:
 
-    - name: Install rpm-build
+    - name: Install rpm-build and other build tools
       run: |
-        sudo dnf -y install rpm-build
+        sudo dnf -y install --setopt=install_weak_deps=False rpm-build rpmdevtools rpmautospec make git-core
 
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - run: git config --global --add safe.directory $(pwd)
 
     - name: rpmbuild
       run: |
-        rpmbuild -ba ./fedora-minimal.spec
+        make -f .copr/Makefile srpm spec=fedora-minimal.spec
+        rpm -Uvh ./fedora-minimal-*.src.rpm
+        rpmbuild -ba $HOME/rpmbuild/SPECS/fedora-minimal-*.spec
 
     - name: clear path for fedora-minimal-conflicts-auth
       run: |
