@@ -22,7 +22,7 @@ jobs:
       run: |
         sudo dnf -y install --setopt=install_weak_deps=False rpm-build rpmdevtools rpmautospec make git-core
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
 

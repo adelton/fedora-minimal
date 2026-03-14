@@ -20,7 +20,7 @@ jobs:
       run: |
         sudo dnf -y install rpmlint
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: rpmlint
       run: |
